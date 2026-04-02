@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: studio-notes-backend
+    restart: unless-stopped
+    environment:
+      PORT: 3001
+    volumes:
+      - studio_notes_data:/app/data
+    expose:
+      - "3001"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /api
+    container_name: studio-notes-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  studio_notes_data:
+
