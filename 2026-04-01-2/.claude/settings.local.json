@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)",
+      "Bash(timeout 5 npx tsx src/index.ts)",
+      "Bash(lsof -ti:3001)",
+      "Bash(xargs -r kill)",
+      "Bash(lsof -ti:5173)",
+      "Bash(npm run:*)",
+      "Bash(curl -s http://localhost:3001/api/tracks)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(netstat -ano)",
+      "Bash(powershell.exe -Command \"Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue | Select-Object OwningProcess\")",
+      "Bash(powershell.exe:*)",
+      "Bash(curl -s -o /dev/null -w \"Client: %{http_code}\" http://localhost:5173)"
+    ]
+  }
+}
