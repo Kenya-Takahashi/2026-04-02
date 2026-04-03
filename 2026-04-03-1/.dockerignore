@@ -1,0 +1,16 @@
+.git
+.gitignore
+.next
+node_modules
+data
+caddy_data
+caddy_config
+coverage
+out
+build
+*.log
+.env
+.env*.local
+README.md
+docs
+scripts
